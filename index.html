@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitrage Calculator</title>
+</head>
+<body>
+    <div class="nav"></div>
+<div class="areaspan">
+    <div class="herosection">
+    <h3 class="heading">Arbitrage Calculator</h3>
+    <div class="inp">
+    
+    <label for="numBets">Number of Bets</label>
+    <input class="underfoe" type="number" id="numBets" min="2" step="1" value="1" placeholder="number of bets" />
+
+
+    <div class="bont"><div id="betsContainer"></div></div>
+
+    <label for="totalStake">Total Stake</label>
+    <input class="underfoe" type="number" id="totalStake" step="0.01" placeholder="total stake amount"/>
+    <button class="calc" onclick="calculateArbitrage()">Calculate</button>
+
+    </div>
+
+   
+    <div id="results" class="grande" >
+        <h3>Results</h3>
+      <div class="side"> 
+        <div class="cora"><div class="cosplay"><p id="stakeResults"></p></div></div>
+    <div class="rslt">
+        <div class="cora"> <p>Total Payout =</p><div class="cosplay"><p id="totalPayout"></p></div></div>
+        <div class="cora"><p>Total Profit =</p><div class="cosplay"> <p id="totalProfit"></p></div></div>
+        <div class="cora"><p>ROI =</p> <div class="cosplay"><p id="roi"></p></div></div>
+    </div>
+    </div>
+</div>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>
