@@ -1,16 +1,22 @@
-document.getElementById('numBets').addEventListener('change', function() {
-    const numBets = parseInt(this.value, 10);
+function updateBets() {
+    const numBets = parseInt(document.getElementById('numBets').value, 10);
     const container = document.getElementById('betsContainer');
     container.innerHTML = '';
 
     for (let i = 0; i < numBets; i++) {
         container.innerHTML += `
-            
-            <label for="odds${i}"><h3>Bet ${i + 1}</h3> Odds </label>
-            <input type="number" id="odds${i}" step="0.01" class="bet-input" min="1"/>
+            <div>
+                <label for="odds${i}"><h3>Bet ${i + 1}</h3> Odds</label>
+                <input type="number" id="odds${i}" step="0.01" class="bet-input" min="1"/>
+            </div>
         `;
     }
-});
+}
+
+document.getElementById('numBets').addEventListener('change', updateBets);
+
+// Initialize with default value
+updateBets();
 
 function calculateArbitrage() {
     const numBets = parseInt(document.getElementById('numBets').value, 10);
