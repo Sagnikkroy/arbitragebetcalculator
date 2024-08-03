@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+}
+
+body{
+    background-color: rgb(25, 25, 27);
+    
+}
+.nav{
+    height: 60px;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:30px ;
+}
+.toplog {
+    display: flex;
+    align-items: center; /* Centers the image vertically */
+    justify-content: center; /* Centers the image horizontally */
+    height: 50px; /* Set a height for the div (adjust as needed) */
+    width: 140px;
+  }
+  .toplog img {
+    max-width: 100%;
+
+    height: auto;
+  }
+
+
+  .men{
+    height:max-content;
+    width: 100%;
+
+  }
+  .hero{
+    height: 50px;
+    border-radius: 10px; /* Rounded corners */
+    border:1px solid white;
+    width:95%;
+    background-color: aliceblue;
+  }
