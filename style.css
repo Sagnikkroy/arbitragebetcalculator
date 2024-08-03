@@ -9,14 +9,18 @@ body{
     
 }
 .nav{
-    height: 50px;
+    height: 60px;
     background-color: #007bff;
-}
-.areaspan{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+.areaspan{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
     margin-top: 20px;
+    padding: 20px;
 }
 
 .herosection {
@@ -24,12 +28,13 @@ body{
     color: aliceblue; /* Light text color */
     font-family: Arial, Helvetica, sans-serif; /* Font stack for text */
     border-radius: 10px; /* Rounded corners */
-    width: 500px; /* Fixed width */
+    width: 100%; /* Fixed width */
     display: flex; /* Enables flexbox layout */
     flex-direction: column; /* Stacks items vertically */
     gap: 5px; /* Spacing between flex items */
-    stroke: 1px white;
+   
     padding: 20px;
+    border:0.1px solid rgba(255, 255, 255, 0.036);
 }
 
 .inp{
@@ -61,11 +66,11 @@ transition: 0.3s;
 margin: 20px;
 }
 .calc:hover{
-    background-color: #3d65f3;
+    background-color: #007bff;
 }
 .underfoe{
     padding: 10px;
-    width:50%;
+    width:60%;
     border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -86,8 +91,8 @@ margin: 20px;
     outline: none;
   }
   .bet-input {
-    height:30px;
-    width:50%;
+    height:35px;
+    width:60%;
     border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -136,3 +141,107 @@ label{
 .grande{
     margin-left: 30px;
 }
+
+  .toplog {
+    display: flex;
+    align-items: center; /* Centers the image vertically */
+    justify-content: center; /* Centers the image horizontally */
+    height: 50px; /* Set a height for the div (adjust as needed) */
+    width: 140px;
+  }
+  .toplog img {
+    max-width: 100%;
+
+    height: auto;
+  }
+  .exp{
+   display: flex;
+   justify-content: center;
+ 
+    height: 100%;
+    
+  }
+  .explanation{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:small;
+    width: 95%;
+    gap: 10px;
+    height: min-content;
+    border: 0.5px solid rgba(255, 255, 255, 0.322);
+    border-radius: 20px;
+    color: aliceblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .dem{
+    display: flex;
+    justify-content: center;
+   
+  }
+  p{
+    line-height: 1.5;
+  }
+  .naval {
+    height: 30px;
+    background-color: #004289;
+    display: flex;
+    
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .naval ul {
+    list-style: none;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Adjust the gap size as needed */
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .naval li {
+    display: flex; /* Make <li> a flex container */
+    align-items: center; /* Center vertically */
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .naval li:hover,
+  .naval li.selected {
+    background-color: #007bff; /* Highlight color for focus/selection */
+  }
+  
+  .naval a {
+    text-decoration: none;
+    display: flex; /* Make <a> a flex container */
+  
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    padding: 0 15px; /* Adjust horizontal padding */
+    color: aliceblue;
+    height: 100%; /* Ensure <a> takes full height of <li> */
+    width: 100%; /* Ensure <a> takes full width of <li> */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    text-align: center; /* Center text horizontally within <a> */
+   
+  }
+
+  /* Styles for mobile devices */
+@media (max-width: 1000px) { /* or you can use other breakpoints depending on your design */
+    .naval {
+      display: none;
+    }
+   
+      .areaspan {
+        grid-template-columns: 1fr; /* Stacks the grid items vertically */
+        grid-template-rows: auto; /* Adjusts the rows to fit the content */
+        gap: 20px; /* Adjust the gap between grid items */
+      }
+    }
+  
+  
