@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbitrage Calculator</title>
+    <title>OddMyBets Arbitrage Calculator</title>
 </head>
 <body>
-    <div class="nav"></div>
+
+    
+    <div class="nav"><div class="toplog"> <img src="oddmybetslogo.png" alt="oddmybets"> </div></div>
+    <div class="naval">
+        <ul>
+          <li><a href="#">Arbitrage Calculator</a></li>
+          <li><a href="#">Dutching Calculator</a></li>
+          <li><a href="#">Odds Convertor</a></li>
+          <li><a href="#">Win Loss Calculator</a></li>
+          <li><a href="#">Parlay Calculator</a></li>
+          <li><a href="#">Hedge Calculator</a></li>
+          <li><a href="#">Kelly-Criterion Calculator</a></li>
+          <li><a href="#">Hold Calculator</a></li>
+        </ul>
+      </div>
+
+
+
 <div class="areaspan">
+    <div class="dem">
     <div class="herosection">
     <h3 class="heading">Arbitrage Calculator</h3>
     <div class="inp">
     
     <label for="numBets">Number of Bets</label>
-    <input class="underfoe" type="number" id="numBets" min="2" step="1" value="1" placeholder="number of bets" />
+    <input class="underfoe" type="number" id="numBets" min="2" step="1" value="2" placeholder="number of bets" />
 
 
     <div class="bont"><div id="betsContainer"></div></div>
@@ -31,13 +49,52 @@
       <div class="side"> 
         <div class="cora"><div class="cosplay"><p id="stakeResults"></p></div></div>
     <div class="rslt">
-        <div class="cora"> <p>Total Payout =</p><div class="cosplay"><p id="totalPayout"></p></div></div>
-        <div class="cora"><p>Total Profit =</p><div class="cosplay"> <p id="totalProfit"></p></div></div>
-        <div class="cora"><p>ROI =</p> <div class="cosplay"><p id="roi"></p></div></div>
+        <div class="cora"> <p>Total Payout=</p><div class="cosplay"><p id="totalPayout"></p></div></div>
+        <div class="cora"><p>Total Profit=</p><div class="cosplay"> <p id="totalProfit"></p></div></div>
+        <div class="cora"><p>ROI=</p> <div class="cosplay"><p id="roi"></p></div></div>
     </div>
     </div>
 </div>
+
+
 </div>
-    <script src="app.js"></script>
+</div>
+<div class="exp"> <div class="explanation">
+
+<p>
+    <h2>What is Arbitrage Betting?</h2>
+<p>Arbitrage betting is a strategy that capitalizes on differences in odds offered by various bookmakers to guarantee a profit regardless of the outcome of an event. This approach involves placing bets on all possible outcomes of a sporting event or other wagerable activities in such a way that the combined odds ensure a return greater than the total amount invested. By leveraging discrepancies in the odds set by different sportsbooks, bettors can create a situation where their potential returns outweigh their stakes, effectively securing a risk-free profit. This technique requires careful calculation and prompt execution, as the odds and available opportunities can change rapidly.</p>
+
+<p> say there’s a tennis match between Player X and Player Y. You find the following odds from two different bookmakers:</p>
+
+<p>Bookmaker 1 offers odds of 2.00 for Player X to win.
+Bookmaker 2 offers odds of 2.10 for Player Y to win.
+Here’s how you can use these odds to guarantee a profit:</p>
+
+<h3>Determine Your Total Investment:</h3>
+<p>Decide how much you want to invest in total. For this example, let’s say you choose $100.</p>
+
+<h3>Calculate the Stake Amounts:</h3>
+
+<p>To ensure a profit, you need to place different amounts on each outcome based on the odds.
+For Player X, you should bet approximately $48.00.
+For Player Y, you should bet approximately $52.00.
+The amounts are calculated so that no matter who wins, the total returns will be more than your total investment, guaranteeing a profit.</p>
+
+<h3>Place Your Bets:</h3>
+
+<p>Bet $48.00 on Player X at Bookmaker 1 with odds of 2.00.
+Bet $52.00 on Player Y at Bookmaker 2 with odds of 2.10.</p>
+
+<h3>Calculate Your Returns:</h3>
+
+<p>If Player X wins, you’ll get $48.00 * 2.00 = $96.00. Since you staked $48.00, your profit will be $48.00.
+If Player Y wins, you’ll get $52.00 * 2.10 = $109.20. Since you staked $52.00, your profit will be $57.20.
+In both scenarios, you make a profit because of the difference in the odds between the two bookmakers. This is how arbitrage betting allows you to ensure a profit by covering all possible outcomes of an event.
+</p></p>
+    
+</div></div>
+    <script src="app.js" ></script>
+    
 </body>
 </html>
