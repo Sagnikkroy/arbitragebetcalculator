@@ -242,6 +242,9 @@ label{
         grid-template-rows: auto; /* Adjusts the rows to fit the content */
         gap: 20px; /* Adjust the gap between grid items */
       }
+      .explanation{
+        width: 100%;
+      }
     }
   
   
