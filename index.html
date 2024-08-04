@@ -1,122 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OddMyBets Arbitrage Calculator</title>
-</head>
-<body>
+.icon-menu {
+  --gap: 5px;
+  --height-bar: 2.5px;
+  --pos-y-bar-one: 0;
+  --pos-y-bar-three: 0;
+  --scale-bar: 1;
+  --rotate-bar-one: 0;
+  --rotate-bar-three: 0;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  cursor: pointer;
+  position: relative;
+}
 
-    
-    <div class="nav"><div class="toplog"> <img src="oddmybetslogo.png" alt="oddmybets"> </div>
+.bar {
+  position: relative;
+  height: var(--height-bar);
+  width: 100%;
+  border-radius: .5rem;
+  background-color: white;
+}
 
-    <input hidden="" class="check-icon" id="check-icon" name="check-icon" type="checkbox">
-    <label class="icon-menu" for="check-icon">
-        <div class="bar bar--1"></div>
-        <div class="bar bar--2"></div>
-        <div class="bar bar--3"></div>
-    </label>
-    
-</div>
-    <div class="naval">
-        <ul>
-          <li><a href="#">Arbitrage Calculator</a></li>
-          <li><a href="#">Dutching Calculator</a></li>
-          <li><a href="#">Odds Convertor</a></li>
-          <li><a href="#">Win Loss Calculator</a></li>
-          <li><a href="#">Parlay Calculator</a></li>
-          <li><a href="#">Hedge Calculator</a></li>
-          <li><a href="#">Kelly-Criterion Calculator</a></li>
-          <li><a href="#">Hold Calculator</a></li>
-        </ul>
-      </div>
+.bar--1 {
+  top: var(--pos-y-bar-one);
+  transform: rotate(var(--rotate-bar-one));
+  transition: top 200ms 100ms, transform 100ms;
+}
 
+.bar--2 {
+  transform: scaleX(var(--scale-bar));
+  transition: transform 150ms 100ms;
+}
 
+.bar--3 {
+  bottom: var(--pos-y-bar-three);
+  transform: rotate(var(--rotate-bar-three));
+  transition: bottom 200ms 100ms, transform 100ms;
+}
 
-<div class="areaspan">
-    <div class="dem">
-    <div class="herosection">
-    <h3 class="heading">Arbitrage Calculator</h3>
-    <div class="inp">
-    
-    <label for="numBets">Number of Bets</label>
-    <input class="underfoe" type="number" id="numBets" min="2" step="1" value="2" placeholder="number of bets" />
+.check-icon:checked + .icon-menu > .bar--1 {
+  transition: top 200ms, transform 200ms 100ms;
+}
 
+.check-icon:checked + .icon-menu > .bar--3 {
+  transition: bottom 200ms, transform 200ms 100ms;
+}
 
-    <div class="bont"><div id="betsContainer"></div></div>
+.check-icon:checked + .icon-menu {
+  --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+  --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+  --scale-bar: 0;
+  --rotate-bar-one: 45deg;
+  --rotate-bar-three: -45deg;
+}
+/* FIN ICON-MENU */
 
-    <label for="totalStake">Total Stake</label>
-    <input class="underfoe" type="number" id="totalStake" step="0.01" placeholder="total stake amount"/>
-    <button class="calc" onclick="calculateArbitrage()">Calculate</button>
+.slide {
+  margin-top: 10vh;
+  height: 90vh;
+  background-color: #007bff;
+  width: 45vw;
+  position: fixed; /* Keeps the menu in a fixed position relative to the viewport */
+  right: 0; /* Aligns the menu to the right edge of the viewport */
+  top: 0; /* Aligns the menu to the top of the viewport */
+  right: -45vw;
+  z-index: 1000; /* Ensures the menu is on top of other content */
+  overflow: auto; /* Adds scrollbars if the content overflows */
+  transition: right 0.3s ease; /* Smooth transition for sliding effect */
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
 
-    </div>
+.check-icon:checked ~ .slide {
+  right: 0; /* Moves the menu into view */
+}
 
-   
-    <div id="results" class="grande" >
-        <h3>Results</h3>
-      <div class="side"> 
-        <div class="cora"><div class="cosplay"><p id="stakeResults"></p></div></div>
-    <div class="rslt">
-        <div class="cora"> <p>Total Payout=</p><div class="cosplay"><p id="totalPayout"></p></div></div>
-        <div class="cora"><p>Total Profit=</p><div class="cosplay"> <p id="totalProfit"></p></div></div>
-        <div class="cora"><p>ROI=</p> <div class="cosplay"><p id="roi"></p></div></div>
-    </div>
-    </div>
-</div>
-
-
-</div>
-</div>
-<div class="exp"> <div class="explanation">
-
-<p>
-    <h2>What is Arbitrage Betting?</h2>
-<p>Arbitrage betting is a strategy that capitalizes on differences in odds offered by various bookmakers to guarantee a profit regardless of the outcome of an event. This approach involves placing bets on all possible outcomes of a sporting event or other wagerable activities in such a way that the combined odds ensure a return greater than the total amount invested. By leveraging discrepancies in the odds set by different sportsbooks, bettors can create a situation where their potential returns outweigh their stakes, effectively securing a risk-free profit. This technique requires careful calculation and prompt execution, as the odds and available opportunities can change rapidly.</p>
-
-<p> say there’s a tennis match between Player X and Player Y. You find the following odds from two different bookmakers:</p>
-
-<p>Bookmaker 1 offers odds of 2.00 for Player X to win.
-Bookmaker 2 offers odds of 2.10 for Player Y to win.
-Here’s how you can use these odds to guarantee a profit:</p>
-
-<h3>Determine Your Total Investment:</h3>
-<p>Decide how much you want to invest in total. For this example, let’s say you choose $100.</p>
-
-<h3>Calculate the Stake Amounts:</h3>
-
-<p>To ensure a profit, you need to place different amounts on each outcome based on the odds.
-For Player X, you should bet approximately $48.00.
-For Player Y, you should bet approximately $52.00.
-The amounts are calculated so that no matter who wins, the total returns will be more than your total investment, guaranteeing a profit.</p>
-
-<h3>Place Your Bets:</h3>
-
-<p>Bet $48.00 on Player X at Bookmaker 1 with odds of 2.00.
-Bet $52.00 on Player Y at Bookmaker 2 with odds of 2.10.</p>
-
-<h3>Calculate Your Returns:</h3>
-
-<p>If Player X wins, you’ll get $48.00 * 2.00 = $96.00. Since you staked $48.00, your profit will be $48.00.
-If Player Y wins, you’ll get $52.00 * 2.10 = $109.20. Since you staked $52.00, your profit will be $57.20.
-In both scenarios, you make a profit because of the difference in the odds between the two bookmakers. This is how arbitrage betting allows you to ensure a profit by covering all possible outcomes of an event.
-</p></p>
-    </div>
-    </div>
-    </div>
-      <!-- Footer -->
-      <footer>
-        <div class="footer">
-            <p>&copy; 2024 OddMyBets. All rights reserved.</p>
-            <ul class="footer-links">
-                <li><a href="#">Responsibility</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-        </div>
-    </footer>
+.slide a{
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  display: block;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide ul{
+  list-style-type: none;
+  padding: 0; /* Optional: Removes default padding */
+  margin: 0;  /* Optional: Removes default margin */
+  width: 100%;
+  display: inline;
+}
 
 
-    <script src="app.js" ></script>
-    
-</body>
-</html>
+.slide a:hover{
+  background-color: #0068d7;
+}
+  
