@@ -4,18 +4,24 @@
     box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
 }
 
+
+
 body{
     background-color: rgb(25, 25, 27);
     
 }
-.nav{
-    height: 60px;
-    background-color: #007bff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:30px ;
+.nav {
+  height: 60px;
+  background-color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px; /* Adjusted padding to prevent overflow */
+  position: sticky;
+  top: 0; /* Sticky positioning starts at the top of the viewport */
+  z-index: 1000; /* Ensures the navbar stays above other content */
 }
+
 .areaspan{
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -250,10 +256,14 @@ label{
     color: rgb(94, 135, 197); /* Link color */
     text-decoration: none; /* Remove underline */
 }
+.slide ul {
+  display: none;
+  
+}
 
 
   @media (max-width: 1000px) {
-
+  /* From Uiverse.io by Creatlydev */ 
 .icon-menu {
   --gap: 5px;
   --height-bar: 2.5px;
@@ -311,7 +321,58 @@ label{
   --rotate-bar-three: -45deg;
 }
 /* FIN ICON-MENU */
-  }
+
+.slide {
+  margin-top: 10vh;
+  height: 90vh;
+  background-color: #007bff;
+  width: 45vw;
+  position: fixed; /* Keeps the menu in a fixed position relative to the viewport */
+  right: 0; /* Aligns the menu to the right edge of the viewport */
+  top: 0; /* Aligns the menu to the top of the viewport */
+  right: -45vw;
+  z-index: 1000; /* Ensures the menu is on top of other content */
+  overflow: auto; /* Adds scrollbars if the content overflows */
+  transition: right 0.3s ease; /* Smooth transition for sliding effect */
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.check-icon:checked ~ .slide {
+  right: 0; /* Moves the menu into view */
+}
+
+.slide a{
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  display: block;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide ul{
+  list-style-type: none;
+  padding: 0; /* Optional: Removes default padding */
+  margin: 0;  /* Optional: Removes default margin */
+  width: 100%;
+  display: inline;
+}
+
+
+.slide a:hover{
+  background-color: #0068d7;
+}
+  
+}
+
+
+  
 
 
 
@@ -319,6 +380,9 @@ label{
 @media (max-width: 1000px) { /* or you can use other breakpoints depending on your design */
     .naval {
       display: none;
+    }
+    .nav{
+      height: 10vh;
     }
    
       .areaspan {
